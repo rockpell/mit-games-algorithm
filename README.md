@@ -16,7 +16,8 @@ M.I.T.의 회원이라면 누구나 환영합니다.
     * 폴더 이름은 닉네임으로 설정하고 내용은 코드 파일만 첨부
     * 문제 하나당 하나의 파일
     * 2019/11/11 하위 폴더에 있는 예시 폴더를 참조하기 바람
-3. push 이후 github 홈페이지에서 pull-request 보냄
+3. push 이후 본인이 fork한 페이지에서 pull-request 생성
+    * 이 때 본인이 fork한 저장소에서 현재 mit-games-algorithm 저장소로 pull-request를 생성해야함
 
 ### 관리자의 경우
 1. 이 프로젝트를 clone 한다.
