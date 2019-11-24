@@ -27,4 +27,5 @@ C++, Python도 마찬가지이기 때문에 주의해야합니다.
 아래의 글들을 참고하시길 바랍니다.
 
 입력속도: https://www.acmicpc.net/blog/view/56
+
 출력속도: https://www.acmicpc.net/blog/view/57
