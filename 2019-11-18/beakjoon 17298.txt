@@ -1,0 +1,24 @@
+listLen = int(input())
+inputNums = input()
+nums = inputNums.split()
+
+nges = []
+
+for i in range(0, listLen):
+    tempL = nums[i+1:]
+    b = True
+    for j in tempL:
+        if int(nums[i]) < int(j):
+            b = False
+            nges.append(j)
+            break
+    if b:
+        nges.append(-1)
+
+string = ''
+        
+for k in nges:
+    string += str(k);
+    string += ' '
+    
+print(string)

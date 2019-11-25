@@ -1,0 +1,31 @@
+def solution(record):
+    answer = []
+    
+    chunkedRecords = []
+    
+    for i in record:
+        temp = tuple(i.split())
+        chunkedRecords.append(temp)
+    
+    uid = []
+    name = []
+
+    for j in range(0, len(chunkedRecords)):
+        
+        if chunkedRecords[j][0] != 'Leave':
+            if chunkedRecords[j][1] in uid:
+                name[uid.index(chunkedRecords[j][1])] = chunkedRecords[j][2]
+            else:
+                uid.append(chunkedRecords[j][1])
+                name.append(chunkedRecords[j][2])
+    
+    for k in range(0, len(chunkedRecords)):
+        temp = ''
+        if chunkedRecords[k][0] == 'Enter':
+            temp = name[uid.index(chunkedRecords[k][1])] + '님이 들어왔습니다.'
+            answer.append(temp)
+        elif chunkedRecords[k][0] == 'Leave':
+            temp += name[uid.index(chunkedRecords[k][1])] + '님이 나갔습니다.'
+            answer.append(temp)
+            
+    return answer
