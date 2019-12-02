@@ -1,46 +1,43 @@
 #include <vector>
-#include <string>
 #include <algorithm>
 
 using namespace std;
 
+/*
+ìˆ˜ì •í•œ ì½”ë“œ
+ì´ì „ ì½”ë“œì—ì„œ 2ì¤‘ Forë¬¸ì„ ëŒë¦¬ë©´ì„œ
+í•„ìš”ì—†ëŠ” ìš”ì†Œë¥¼ ë§ì´ ê²€ì‚¬í•´ì„œ
+ì‹œê°„ ì´ˆê³¼ê°€ ë‚œ ê²ƒ ê°™ìŠµë‹ˆë‹¤.
+*/
 int solution(vector<int> people, int limit)
 {
 	int answer = 0;
-	int end = people.size() - 1;
+    // ë³´íŠ¸ì— íƒœìš¸ ì‚¬ëŒì˜ ìœ„ì¹˜
+	int l = 0, r = people.size() - 1;
+    // í™•ì¸í•œ ì‚¬ëŒì¸ì§€ ì €ì¥í•˜ëŠ” ë°°ì—´
 	vector<bool> is_checked(people.size(), false);
 
-	// ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ°í, Á¦ÀÏ ¸ö¹«°Ô°¡ ³·Àº »ç¶÷ºÎÅÍ °ñ¶ó ÃÖ´ëÇÑ ¸ö¹«°Ô¸¦ ¸¹ÀÌ Ã¤¿ï ¼ö ÀÖ´Â ¹æÇâÀ¸·Î °è»êÇÑ´Ù.
+	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ê³ , ì œì¼ ëª¸ë¬´ê²Œê°€ ë‚®ì€ ì‚¬ëŒë¶€í„° ê³¨ë¼
+    // ìµœëŒ€í•œ ëª¸ë¬´ê²Œë¥¼ ë§ì´ ì±„ìš¸ ìˆ˜ ìˆëŠ” ë°©í–¥ìœ¼ë¡œ ê³„ì‚°í•œë‹¤.
 	std::sort(&people[0], &people[0] + people.size());
-
-	for (int i = 0; i people.size(); i++)
-	{
-		int pass_light = people[i];
-
-		if (is_checked[i])
-			continue;
-
-		for (int j = end; j i; j--)
-		{
-			if (!is_checked[j] && pass_light + people[j] = limit)
-			{
-				end = j - 1;
-				is_checked[i] = true;
-				is_checked[j] = true;
-				answer++;
-				break;
-			}
-		}
-	}
-
-	for (int i = 0; i people.size(); i++)
-	{
-		if (!is_checked[i])
-		{
-			is_checked[i] = true;
-			answer++;
-		}
-	}
+    
+    for(int i = r; l < i; i--)
+    {
+        if (!is_checked[l]&& !is_checked[i] && people[l] + people[i] <= limit)
+        {
+            is_checked[l] = is_checked[i] = true;
+            l++;
+            r--;
+            answer++;
+        }
+    }
+    
+    // ë‚¨ì€ ì‚¬ëŒë§ˆë‹¤ ë³´íŠ¸ê°€ í•˜ë‚˜ì”© í•„ìš”
+    for (int i = 0; i < people.size(); i++)
+    {
+        if (!is_checked[i])
+            answer++;
+    }
 
 	return answer;
 }
