@@ -16,3 +16,29 @@ M.I.T.의 회원이라면 누구나 환영합니다.
     * 2019/11/11 하위 폴더에 있는 예시 폴더를 참조하기 바람
 3. push 이후 본인이 fork한 페이지에서 pull-request 생성
     * 이 때 본인이 fork한 저장소에서 현재 mit-games-algorithm 저장소로 pull-request를 생성해야함
+
+## Fork 저장소 동기화 하는법
+1. github 웹페이지에서 하는 방법
+      
+      https://rockpell.github.io/Fork%EC%A0%80%EC%9E%A5%EC%86%8C%EB%8F%99%EA%B8%B0%ED%99%94/
+      
+2. sourcetree를 사용하는 방법
+      
+      https://www.lesstif.com/pages/viewpage.action?pageId=20775062
+      
+3. git bash를 사용하는 방법
+      
+      https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
+
+## 입출력 관련 주의사항
+백준과 같은 알고리즘 사이트에서는 입출력 속도가 문제 해결에 영향을 줍니다.
+
+특히 JAVA의 경우 System.out.println은 느리기 때문에 BufferedWriter을 사용하길 추천합니다.
+
+C++, Python도 마찬가지이기 때문에 주의해야합니다.
+
+아래의 글들을 참고하시길 바랍니다.
+
+입력속도: https://www.acmicpc.net/blog/view/56
+
+출력속도: https://www.acmicpc.net/blog/view/57
